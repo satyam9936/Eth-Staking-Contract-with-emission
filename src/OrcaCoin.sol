@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Unlicense
-pragma solidity ^0.8.26;
+pragma solidity ^0.8.13;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract OrcaCoinContract is ERC20 { 
@@ -16,8 +16,9 @@ contract OrcaCoinContract is ERC20 {
         _mint(account, value);
     }
 
-    function updateStakingcontract(address _stakingContract) public {
+    function updateStakingContract(address _stakingContract) public {
         require(msg.sender == owner);
-        stakingContract = _stakingContract; // Missing semicolon added
+        stakingContract = _stakingContract;
     }
+
 }
